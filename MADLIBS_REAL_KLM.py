@@ -19,7 +19,8 @@ Date Last Modified: 11/17
 #put stories in separate file and read them
 
 # Data Abstraction
-import random
+import tkinter as tk
+status_label = None
 
 #Dictionaries for word storage
 word_types_one = {
@@ -109,8 +110,24 @@ def input_words(story_selected, story_number):
         story_selected["prefix"] = story_selected["animal"][:3]
     return story_selected
 
+def accept_input(event=None):
+    user_text = textbox.get()
+    print("User typed:", user_text)
+    textbox.delete(0,"end")
 
 def story_select():
+    global status_label
+    root = tk.Tk()
+    root.title("MadLibs")
+    label = tk.Label(root, text="Enter story number:", font=("Arial", 40))
+    font=("Impact", 40)
+    root.geometry("600x400")
+    label.pack()
+    textbox = tk.Text(root, width=20, height=5, bd=4, relief="ridge", font=("Arial", 40))
+    textbox.pack(pady=50)
+    story_number = accept_input
+    root.mainloop()
+
     story_number = int(input("Enter story number: "))
     if story_number == 1:
         story_selected = word_types_one
@@ -132,6 +149,7 @@ def story_select():
         story_selected = input_words(story_selected, story_number)
         temp = get_story(story_number)
         story = temp.format(**story_selected)
+
     return story
 
 def display_story(story):
