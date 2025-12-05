@@ -38,7 +38,21 @@ story_format = {}
 #     'place': 'a place',
 #     'number4': 'another number'
 # }
-
+"""
+word_types_sea_third = {
+    'verb': 'a verb (present tense)',
+    'adverb': 'an adverb',
+    'plural_creatures': 'a plural sea creature',
+    'name': 'a name',
+    'adjective1': 'an adjective',
+    'place': 'an underwater location',
+    'job': 'a job/profession',
+    'sea_animal': 'a sea animal (singular)',
+    'prefix': 'a short prefix (like aqua, fish, sea)',
+    'number': 'a number',
+    'past_tense_verb': 'a past-tense verb'
+}
+"""
 
 
 def make_word_list(word_list, id):
@@ -89,3 +103,4 @@ def make_story(selected_words, story_number):
     elif story_number == 4:
         story = story4.format(**selected_words)
     return story
+
