@@ -4,13 +4,7 @@
 # Assignment Description: Create Madlib
 # Due Date: 12/6
 # Date Created: 11/17
-# Date Last Modified: 12/5
-
-#As of recent:
-#Rewrote some code to make it cleaner so its just the functions we need
-#Need story 3 and 4, might make 5
-#Need get_story function debug, creates 3 empty lines instead of 1
-
+# Date Last Modified: 12/6
 
 # Data Abstraction
 
@@ -22,42 +16,11 @@ story4=""
 #Dictionaries for word storage
 story_format = {}
 
-#Will use this later
-# word_format_2 = {
-#     'name': 'a name',
-#     'adjective1': 'an adjective',
-#     'adjective2': 'another adjective',
-#     'adjective3': 'an adjective ending in -est',
-#     'number1': 'a number',
-#     'food': 'a type of food (singular)',
-#     'number2': 'another number',
-#     'adjective4': 'an adjective',
-#     'adjective5': 'another adjective',
-#     'facial_feature': 'a facial feature (e.g. nose, beard)',
-#     'number3': 'another number',
-#     'place': 'a place',
-#     'number4': 'another number'
-# }
-"""
-word_types_sea_third = {
-    'verb': 'a verb (present tense)',
-    'adverb': 'an adverb',
-    'plural_creatures': 'a plural sea creature',
-    'name': 'a name',
-    'adjective1': 'an adjective',
-    'place': 'an underwater location',
-    'job': 'a job/profession',
-    'sea_animal': 'a sea animal (singular)',
-    'prefix': 'a short prefix (like aqua, fish, sea)',
-    'number': 'a number',
-    'past_tense_verb': 'a past-tense verb'
-}
-"""
 
-
-def make_word_list(word_list, id):
+def make_word_list(word_list, story_number):
     global story_format
-    if id == "something":
+    word_list = [word.strip() for word in word_list]
+    if story_number == 1:
         story_format = {
             'verb': word_list[0],
             'adverb': word_list[1],
@@ -70,7 +33,50 @@ def make_word_list(word_list, id):
             'past_tense_verb': word_list[8],
             'prefix': word_list[6][:3]
         }
+    if story_number == 2:
+        story_format = {
+            'name': word_list[0],
+            'adjective1': word_list[1],
+            'adjective2': word_list[2],
+            'adjective3': word_list[3],
+            'number1': word_list[4],
+            'food': word_list[5],
+            'number2': word_list[6],
+            'adjective4': word_list[7],
+            'adjective5': word_list[8],
+            'facial_feature': word_list[9],
+            'number3': word_list[10],
+            'place': word_list[11],
+            'number4': word_list[12]
+        }
 
+    if story_number ==3:
+        story_format = {
+            'verb': word_list[0],
+            'adverb': word_list[1],
+            'plural_creatures': word_list[2],
+            'name': word_list[3],
+            'adjective1': word_list[4],
+            'place': word_list[5],
+            'job': word_list[6],
+            'sea_animal': word_list[7],
+            'number': word_list[8],
+            'past_tense_verb': word_list[9],
+            'prefix': word_list[7][:3]
+        }
+    if story_number == 4:
+        story_format = {
+            'verb': word_list[0],
+            'adverb': word_list[1],
+            'plural_animals': word_list[2],
+            'name': word_list[3],
+            'adjective1': word_list[4],
+            'job': word_list[5],
+            'number': word_list[6],
+            'animal': word_list[7],
+            'past_tense_verb': word_list[8],
+            'prefix': word_list[3][:3]
+        }
     return story_format
 
 def get_story():
@@ -79,18 +85,25 @@ def get_story():
     global story3
     global story4
 
-    f = open("stories.txt")
-    contents = f.readlines()
-    f.close()
+    mystory = open("stories.txt")
+    contents = mystory.readlines()
+    mystory.close()
 
-    story1 = "".join(contents[0:17]).rstrip()
-    story2 = "".join(contents[17:34]).rstrip()
+    story1 = contents[1:21]
+    story1 = "".join(story1)
 
+    story2 = contents[23:37]
+    story2 = "".join(story2)
+
+    story3 = contents[39:59]
+    story3 = "".join(story3)
+
+    story4 = contents[62:92]
+    story4 = "".join(story4)
     return story1, story2, story3, story4
 
 
 def make_story(selected_words, story_number):
-
     story=""
     if story_number == 1:
         story = story1.format(**selected_words)
@@ -101,5 +114,7 @@ def make_story(selected_words, story_number):
     elif story_number == 4:
         story = story4.format(**selected_words)
     return story
+
+
 
 
