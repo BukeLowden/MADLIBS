@@ -29,15 +29,15 @@ class ML_GUI:
         page4 = tk.Frame(self.root, bg=page_color)
 
         #First Page Gizmos
-        chapter1 = tk.Label(page1, text="- Chapter One -", font=("Times New Roman", 20), bg=page_color)
+        chapter1 = tk.Label(page1, text="- Chapter One -", font=("Times New Roman", 20), bg=page_color, fg="black")
         chapter1.place(x=400,y=100, anchor="center")
-        title1 = tk.Label(page1, text="The Bathman", font=("Times New Roman", 50), bg=page_color)
+        title1 = tk.Label(page1, text="The Bathman", font=("Times New Roman", 50), bg=page_color, fg="black")
         title1.place(x=400, y=160, anchor="center")
         page_divider = tk.Label(page1, text="|", font=("Times New Roman", 60), bg=page_color)
         page_divider.place(x=800,y=500, anchor="center")
 
         #find if you can make buttons have dimentions, or be different shapes
-        p1_submit_button = tk.Button(page1, text="Submit", font=("Times New Roman", 50), bg=page_color,)
+        p1_submit_button = tk.Button(page1, text="Submit", font=("Times New Roman", 50), bg=page_color,fg="green")
         p1_submit_button.place(x=1200, y=700, anchor="center")
         # story_text1 = tk.Label(page1, text=story1, font=font_style, bg=page_color)
         # story_text1.place(x=400, y=600, anchor="center")
@@ -46,15 +46,15 @@ class ML_GUI:
         # Goal = list the words and have text box for each individual word
         # user presses button to receive all words and either put into list or dict
         # call make story function to put words into the story
-        p1_v = tk.Label(page1, text="Verb:", font=font_style, bg=page_color)
-        p1_adv = tk.Label(page1, text="Adverb:", font=font_style, bg=page_color)
-        p1_pla = tk.Label(page1, text="Plural Animal:", font=font_style, bg=page_color)
-        p1_na = tk.Label(page1, text="Name:", font=font_style, bg=page_color)
-        p1_adj = tk.Label(page1, text="Adjective:", font=font_style, bg=page_color)
-        p1_oc = tk.Label(page1, text="Occupation:", font=font_style, bg=page_color)
-        p1_ani = tk.Label(page1, text="Animal:", font=font_style, bg=page_color)
-        p1_num = tk.Label(page1, text="Number:", font=font_style, bg=page_color)
-        p1_ptv = tk.Label(page1, text="Past Tense Verb:", font=font_style, bg=page_color)
+        p1_v = tk.Label(page1, text="Verb:", font=font_style, bg=page_color, fg="black")
+        p1_adv = tk.Label(page1, text="Adverb:", font=font_style, bg=page_color, fg="black")
+        p1_pla = tk.Label(page1, text="Plural Animal:", font=font_style, bg=page_color, fg="black")
+        p1_na = tk.Label(page1, text="Name:", font=font_style, bg=page_color, fg="black")
+        p1_adj = tk.Label(page1, text="Adjective:", font=font_style, bg=page_color, fg="black")
+        p1_oc = tk.Label(page1, text="Occupation:", font=font_style, bg=page_color, fg="black")
+        p1_ani = tk.Label(page1, text="Animal:", font=font_style, bg=page_color, fg="black")
+        p1_num = tk.Label(page1, text="Number:", font=font_style, bg=page_color, fg="black")
+        p1_ptv = tk.Label(page1, text="Past Tense Verb:", font=font_style, bg=page_color, fg="black")
 
         p1_v.place(x=1000, y=80, anchor="center")
         p1_adv.place(x=986, y=140, anchor="center")
