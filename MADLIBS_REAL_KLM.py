@@ -79,16 +79,14 @@ def get_story():
     global story3
     global story4
 
-    mystory = open("stories.txt")
-    contents = mystory.readlines()
-    mystory.close()
+    f = open("stories.txt")
+    contents = f.readlines()
+    f.close()
 
-    story1 = contents[2:21]
-    story1 = "\n".join(story1)
+    story1 = "".join(contents[0:17]).rstrip()
+    story2 = "".join(contents[17:34]).rstrip()
 
-    story2 = contents[24:37]
-    story2 = "\n".join(story2)
-    return story1, story2
+    return story1, story2, story3, story4
 
 
 def make_story(selected_words, story_number):
@@ -103,4 +101,5 @@ def make_story(selected_words, story_number):
     elif story_number == 4:
         story = story4.format(**selected_words)
     return story
+
 
